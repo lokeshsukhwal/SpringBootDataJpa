@@ -1,0 +1,19 @@
+package com.app.lokesh.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table
+public class Student {
+	private Integer sId;
+	private String sName;
+	private String sMail;
+}

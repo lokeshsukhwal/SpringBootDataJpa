@@ -1,0 +1,33 @@
+package com.app.lokesh.entity;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table
+public class Employee {
+	@Id
+	private Integer empId;
+	private String empFname;
+	private String empLname;
+	private Integer empAge;
+	private Integer empPhone;
+	private String empEmail;
+	private String empAddrs;
+	
+	@ManyToOne
+	@JoinColumn(name = "projFK")
+	private List<Project> project;
+}

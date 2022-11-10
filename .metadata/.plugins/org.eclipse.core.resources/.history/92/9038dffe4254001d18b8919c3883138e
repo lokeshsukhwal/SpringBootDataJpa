@@ -1,0 +1,38 @@
+package com.app.lokesh.runner;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.app.lokesh.entity.Employee;
+import com.app.lokesh.entity.Project;
+import com.app.lokesh.repository.EmployeeRepository;
+import com.app.lokesh.repository.ProjectRepository;
+
+@Component
+public class TestRunner implements CommandLineRunner {
+	@Autowired
+	private EmployeeRepository eRepository;
+	@Autowired
+	private ProjectRepository pRepository;
+
+	@Override
+	public void run(String... args) throws Exception {
+		Project projectOne = new Project(111, 1, "proj-1", "PROJECT1", new Date());
+		Project projectTwo = new Project(112, 1, "proj-1", "PROJECT1", new Date());
+		pRepository.save(project);
+
+		eRepository.saveAll(
+				List.of(
+						new Employee(111,"Lokesh", "Kumar", 24, 1234567890D, "ls@abc.com", "hyd", List.of(111,112)),
+						new Employee(111,"Lokesh", "Kumar", 24, 1234567890D, "ls@abc.com", "hyd", List.of(111)),
+						new Employee(111,"Lokesh", "Kumar", 24, 1234567890D, "ls@abc.com", "hyd", List.of(111)),
+						new Employee(111,"Lokesh", "Kumar", 24, 1234567890D, "ls@abc.com", "hyd", List.of(111)),
+						)
+				);
+
+	}
+}

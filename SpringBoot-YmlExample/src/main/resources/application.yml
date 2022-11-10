@@ -1,0 +1,6 @@
+com:
+  app:
+    host: gmail
+    password: root
+    port: 6161
+    username: root

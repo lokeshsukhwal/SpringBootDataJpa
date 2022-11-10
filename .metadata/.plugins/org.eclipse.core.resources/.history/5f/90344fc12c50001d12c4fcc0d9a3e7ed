@@ -1,0 +1,23 @@
+package com.app.lokesh.entity;
+
+import javax.management.loading.PrivateClassLoader;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table
+public class Classroom {
+	@Id
+	private Integer cId;
+	private String cName;
+	
+	@OneToMany
+	@JoinColumn(name = "stuFK")
+	private Student student;
+}
